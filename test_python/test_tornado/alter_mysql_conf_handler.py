@@ -84,4 +84,4 @@ class AlterMysqlConfApiHandler(tornado.web.RequestHandler):
     @staticmethod
     def alter_mysql_conf_in_redis(mysql_conf, new_db_name):
         mysql_conf['db_server']['db'] = new_db_name
-        save_config_to_redis(KEY_TYPE_SYS_CONFIG, 'mysql', mysql_conf)
+        save_config_to_redis('mysql', mysql_conf)
